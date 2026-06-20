@@ -1,0 +1,95 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'FlyBird 小郑 - 金融投资社群',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- 原有自媒体账号服务模块 -->
+  <Content
+    isReversed
+    items={[
+      {
+        title: '金融投资社群',
+        description: '',
+        icon: 'tabler:wand',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/jinrongtouzi.jpg',
+      alt: '自媒体服务',
+      style: 'width: 200px; height: 200px;',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">金融投资社群</h3>
+    </Fragment>
+  </Content>
+
+  <!-- 新增：金融投资社群模块 -->
+  <Features2
+    title="🔥 FlyBird 小郑 金融投资私域社群"
+    subtitle="限时加入价 ¥299 终身有效（原价 ¥599）"
+    items={[
+      {
+        title: "实时行情与信号",
+        description: "每日/每周精选投资机会、加密货币与股票交易信号，附带详细逻辑分析",
+        icon: "tabler:chart-line",
+      },
+      {
+        title: "高手实盘复盘",
+        description: "群内多名年化收益30%+ 的交易者分享真实仓位、风控策略与心态复盘",
+        icon: "tabler:chart-bar",
+      },
+      {
+        title: "深度研究报告",
+        description: "项目调研、宏观分析、链上数据解读、政策解读等高质量报告",
+        icon: "tabler:book",
+      },
+      {
+        title: "专业答疑指导",
+        description: "小郑及核心交易员亲自解答仓位管理、风险控制、心理建设等问题",
+        icon: "tabler:help-circle",
+      },
+      {
+        title: "高质量圈子资源",
+        description: "严格审核，仅限认真做投资的伙伴，资源共享、项目内推、合作机会",
+        icon: "tabler:shield-check",
+      },
+      {
+        title: "限时专属福利",
+        description: "加入即送《2026加密货币投资手册 + 交易系统模板 + 风险控制 checklist》",
+        icon: "tabler:gift",
+      },
+    ]}
+  />
+
+  <!-- 金融投资社群加入按钮 -->
+  <CallToAction
+    title="立即加入金融投资私域社群"
+    subtitle="限量500人，招满即涨价至 ¥599"
+    actions={[
+      {
+        text: "联系我扫码支付 ¥299 加入",
+        href: "#",                    // 改成你的收款二维码链接
+        icon: "tabler:brand-whatsapp",
+        style: "primary"
+      }
+    ]}
+  >
+    <Fragment slot="content">
+      <p class="max-w-xl mx-auto text-lg">
+        支付后请备注：<strong>金融投资 + 你的微信昵称</strong>，我会亲自拉你进群
+      </p>
+    </Fragment>
+  </CallToAction>
+
+</Layout>

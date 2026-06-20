@@ -1,0 +1,37 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Telegram联系方式',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: '@stella_cox798',
+        description:
+          '日常交流、加我请备注来意，不闲聊.如果找不到可以直接找双向机器人@stella_cox798_bot<br><br>或者加入telegram交流群找我<br>https://t.me/flybird_home',
+        icon: 'tabler:wand',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/tg.png',
+      alt: 'Features Image',
+      style: 'width: 200px; height: 200px;',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">私人Telegram</h3>
+    </Fragment>
+  </Content>
+
+</Layout>

@@ -1,0 +1,37 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'AI大模型合租拼车',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: '境外美股',
+        description:
+          '提供境外美股的新手教学服务。<br><br>视频链接：https://www.youtube.com/channel/UCrue9puceK0-TT5_JYY448A?sub_confirmation=1',
+        icon: 'tabler:wand',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/meigu.jpg',
+      alt: 'Features Image',
+      style: 'width: 200px; height: 200px;',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">美股</h3>
+    </Fragment>
+  </Content>
+
+</Layout>

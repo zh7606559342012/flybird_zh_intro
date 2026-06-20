@@ -1,0 +1,95 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'FlyBird 小郑 - 创业社群',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- 原有自媒体账号服务模块 -->
+  <Content
+    isReversed
+    items={[
+      {
+        title: '创业社群',
+        description: '',
+        icon: 'tabler:wand',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/chuangye.jpg',
+      alt: '创业社群',
+      style: 'width: 200px; height: 200px;',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">创业社群</h3>
+    </Fragment>
+  </Content>
+
+  <!-- 新增：创业社群模块 -->
+  <Features2
+    title="🔥 FlyBird 小郑 创业私域社群"
+    subtitle="限时加入价 ¥299 终身有效（原价 ¥599）"
+    items={[
+      {
+        title: "创业项目机会",
+        description: "每周精选低成本、高潜力创业项目、赛道分析和落地方法",
+        icon: "tabler:rocket",
+      },
+      {
+        title: "真实创业复盘",
+        description: "群内多位已实现稳定盈利的创业者分享从0到1全过程及避坑经验",
+        icon: "tabler:chart-bar",
+      },
+      {
+        title: "资源与人脉对接",
+        description: "投资人、合伙人、供应链、流量渠道、技术开发等资源共享",
+        icon: "tabler:users-group",
+      },
+      {
+        title: "专业答疑指导",
+        description: "小郑及多位成功创业者亲自解答项目选择、团队搭建、融资、运营等问题",
+        icon: "tabler:help-circle",
+      },
+      {
+        title: "高质量创业圈子",
+        description: "严格审核，仅限认真想创业或已在创业的伙伴，氛围积极、互相支持",
+        icon: "tabler:shield-check",
+      },
+      {
+        title: "限时专属福利",
+        description: "加入即送《2026创业项目库 + 商业计划书模板 + 融资BP模板 + 运营 checklist》",
+        icon: "tabler:gift",
+      },
+    ]}
+  />
+
+  <!-- 创业社群加入按钮 -->
+  <CallToAction
+    title="立即加入创业私域社群"
+    subtitle="限量500人，招满即涨价至 ¥599"
+    actions={[
+      {
+        text: "联系我扫码支付 ¥299 加入",
+        href: "#",                    // 这里改成你的收款二维码链接
+        icon: "tabler:brand-whatsapp",
+        style: "primary"
+      }
+    ]}
+  >
+    <Fragment slot="content">
+      <p class="max-w-xl mx-auto text-lg">
+        支付后请备注：<strong>创业社群 + 你的微信昵称</strong>，我会亲自拉你进群
+      </p>
+    </Fragment>
+  </CallToAction>
+
+</Layout>

@@ -1,0 +1,37 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: '账号星球',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: '账号星球',
+        description:
+          '账号星球（若无法访问，请切换至海外网络）提供苹果id购买、电报Telegram账号等各类国外ID，社交媒体账号购买批发.<br><br>购买链接：https://accboy7flybird.acceboy.com/',
+        icon: 'tabler:wand',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/zhanghao.jpg',
+      alt: 'Features Image',
+      style: 'width: 200px; height: 200px;',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">网站账号购买</h3>
+    </Fragment>
+  </Content>
+
+</Layout>

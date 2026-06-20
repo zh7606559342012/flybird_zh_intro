@@ -1,0 +1,37 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'AI大模型合租拼车',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'gamsgo平台',
+        description:
+          '在GamsGo 探索高性价比的数字订阅服务。畅享流媒体、AI 和软件账号，极速发货，售后无忧。寻找最适合您的方案。<br><br>购买链接：https://www.gamsgo.com/partner/sTtvC',
+        icon: 'tabler:wand',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/gamsgo.jpg',
+      alt: 'Features Image',
+      style: 'width: 200px; height: 200px;',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">AI大模型合租拼车</h3>
+    </Fragment>
+  </Content>
+
+</Layout>

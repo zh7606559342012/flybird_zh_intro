@@ -1,0 +1,96 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'FlyBird 小郑 - 自媒体社群',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- 原有自媒体模块（保留） -->
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'youtube自媒体',
+        description:
+          '',
+        icon: 'tabler:wand',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/zimeiti.jpg',
+      alt: '自媒体服务',
+      style: 'width: 200px; height: 200px;',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">自媒体账号服务</h3>
+    </Fragment>
+  </Content>
+
+  <!-- 新增：YouTube 微信交流群 推广模块 -->
+  <Features2
+    title="🔥 FlyBird 小郑 YouTube 私域交流群"
+    subtitle="限时加入价 ¥299 终身有效（原价 ¥599）"
+    items={[
+      {
+        title: "实时干货分享",
+        description: "算法更新、爆款视频拆解、标题缩略图优化，每周 3-5 条核心干货",
+        icon: "tabler:bolt",
+      },
+      {
+        title: "高手案例复盘",
+        description: "月入5-6位 YouTuber 分享真实数据、变现路径和避坑经验",
+        icon: "tabler:chart-bar",
+      },
+      {
+        title: "资源合作对接",
+        description: "剪辑、外包、翻译、推广渠道、MCN资源共享",
+        icon: "tabler:users-group",
+      },
+      {
+        title: "专业答疑",
+        description: "小郑亲自答疑 + 核心管理员支持，从0到1全程指导",
+        icon: "tabler:help-circle",
+      },
+      {
+        title: "高质量圈子",
+        description: "严格审核，300+ 认真做 YouTube 的伙伴，互相鼓励共同进步",
+        icon: "tabler:shield-check",
+      },
+      {
+        title: "限时福利",
+        description: "加入即送《2026爆款选题库 + 标题公式 + 最新算法白皮书》",
+        icon: "tabler:gift",
+      },
+    ]}
+  />
+
+  <!-- 加入按钮区域 -->
+  <CallToAction
+    title="立即加入 YouTube 私域交流群"
+    subtitle="限量500人，招满即涨价至 ¥599"
+    actions={[
+      {
+        text: "联系我扫码支付 ¥299 加入",
+        href: "#",           // 这里改成你的收款二维码链接或跳转页面
+        icon: "tabler:brand-whatsapp",
+        style: "primary"
+      }
+    ]}
+  >
+    <Fragment slot="content">
+      <p class="max-w-xl mx-auto text-lg">
+        支付后请备注：<strong>YouTube + 你的微信昵称</strong>，我会亲自拉你进群
+      </p>
+    </Fragment>
+  </CallToAction>
+
+</Layout>

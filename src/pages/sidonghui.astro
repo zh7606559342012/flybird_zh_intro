@@ -1,0 +1,96 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'FlyBird 小郑 - 个人商业介绍',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- 原有自媒体账号服务模块 -->
+  <Content
+    isReversed
+    items={[
+      {
+        title: '私董会社群',
+        description: '',
+        icon: 'tabler:wand',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/sidonghui.png',
+      alt: '自媒体服务',
+      style: 'width: 200px; height: 200px;',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">私董会社群</h3>
+    </Fragment>
+  </Content>
+
+  <!-- 私董会社群（已修复图标） -->
+  <Features2
+    title="🔥 FlyBird 小郑 私董会社群"
+    subtitle="限时加入价 ¥8888 终身有效（原价 ¥18888）"
+    items={[
+      {
+        title: "高端闭门分享",
+        description: "每月2-3次私董会，企业家轮流分享真实项目，由群内多位成功创业者共同诊断",
+        icon: "tabler:users-group",
+      },
+      {
+        title: "一对一深度复盘",
+        description: "企业战略、团队管理、融资、营销、风险防控等实际问题现场拆解与辅导",
+        icon: "tabler:chart-bar",
+      },
+      {
+        title: "顶级人脉资源",
+        description: "投资人、行业专家、供应链资源、潜在合伙人等高端人脉对接",
+        icon: "tabler:users-plus",           // 已替换为有效图标
+      },
+      {
+        title: "小郑亲自带队",
+        description: "小郑作为核心发起人，每期私董会亲自主持，提供实战经验与外部视角",
+        icon: "tabler:user-star",
+      },
+      {
+        title: "高信任闭环圈子",
+        description: "严格筛选，限额30人，仅限有一定实力和认知的创业者/老板加入，高度保密",
+        icon: "tabler:shield-lock",
+      },
+      {
+        title: "专属增值服务",
+        description: "加入即送《私董会案例集 + 商业诊断模板 + 年度战略规划工具包》",
+        icon: "tabler:gift",
+      },
+    ]}
+  />
+
+  <!-- 私董会社群加入按钮 -->
+  <CallToAction
+    title="立即加入私董会社群"
+    subtitle="限量30人，招满即停止招募（高端私密圈）"
+    actions={[
+      {
+        text: "联系我扫码支付 ¥8888 加入",
+        href: "#",                    // 改成你的收款二维码链接
+        icon: "tabler:brand-whatsapp",
+        style: "primary"
+      }
+    ]}
+  >
+    <Fragment slot="content">
+      <p class="max-w-xl mx-auto text-lg">
+        支付后请备注：<strong>私董会 + 你的微信昵称 + 公司/项目简介</strong>，<br>
+        我会亲自审核并拉你进群
+      </p>
+    </Fragment>
+  </CallToAction>
+
+</Layout>

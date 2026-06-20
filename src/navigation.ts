@@ -10,20 +10,20 @@ export const headerData = {
       text: '兴趣社群',
       links: [
         {
-          text: '自媒体',
-          href: getPermalink('/homes/saas'),
+          text: '自媒体社群',
+          href: getPermalink('/zimeiti'),
         },
         {
-          text: '金融投资',
-          href: getPermalink('/homes/startup'),
+          text: '金融投资社群',
+          href: getPermalink('/jinrongtouzi'),
         },
         {
-          text: '创业',
-          href: getPermalink('/homes/mobile-app'),
+          text: '创业社群',
+          href: getPermalink('/chuangye'),
         },
         {
-          text: '私董会',
-          href: getPermalink('/homes/personal'),
+          text: '私董会社群',
+          href: getPermalink('/sidonghui'),
         },
       ],
     },
@@ -32,19 +32,19 @@ export const headerData = {
       links: [
         {
           text: '基金',
-          href: getPermalink('/#features'),
+          href: getPermalink('/jijin'),
         },
         {
           text: 'A股',
-          href: getPermalink('/services'),
+          href: getPermalink('/agu'),
         },
         {
           text: '美股',
-          href: getPermalink('/pricing'),
+          href: getPermalink('/meigu'),
         },
         {
           text: '加密货币',
-          href: getPermalink('/about'),
+          href: getPermalink('/jiamihuobi'),
         },
         // {
         //   text: 'Contact',
@@ -65,15 +65,15 @@ export const headerData = {
       links: [
         {
           text: 'AI大模型',
-          href: getPermalink('/landing/lead-generation'),
+          href: getPermalink('/gamsgo'),
         },
         {
           text: '网站账号购买',
-          href: getPermalink('/landing/sales'),
+          href: getPermalink('/zhanghao'),
         },
         {
           text: '个人建站支持',
-          href: getPermalink('/landing/sales'),
+          href: getPermalink('/jianzhan'),
         },
         // {
         //   text: 'Click-Through',
@@ -98,19 +98,19 @@ export const headerData = {
       links: [
         {
           text: '微信',
-          href: getBlogPermalink(),
+          href: getPermalink('/wechat'),
         },
         {
           text: 'QQ',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+          href: getPermalink('/qq'),
         },
         {
           text: 'Telegram',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
+          href: getPermalink('/tg'),
         },
         {
           text: 'Telegram交流群',
-          href: getPermalink('tutorials', 'category'),
+          href: getPermalink('/tgqun'),
         },
         // {
         //   text: 'Tag Page',
@@ -128,50 +128,50 @@ export const headerData = {
 
 export const footerData = {
   links: [
+    // {
+    //   title: 'Product',
+    //   links: [
+    //     { text: 'Features', href: '#' },
+    //     { text: 'Security', href: '#' },
+    //     { text: 'Team', href: '#' },
+    //     { text: 'Enterprise', href: '#' },
+    //     { text: 'Customer stories', href: '#' },
+    //     { text: 'Pricing', href: '#' },
+    //     { text: 'Resources', href: '#' },
+    //   ],
+    // },
+    // {
+    //   title: 'Platform',
+    //   links: [
+    //     { text: 'Developer API', href: '#' },
+    //     { text: 'Partners', href: '#' },
+    //     { text: 'Atom', href: '#' },
+    //     { text: 'Electron', href: '#' },
+    //     { text: 'AstroWind Desktop', href: '#' },
+    //   ],
+    // },
     {
-      title: 'Product',
+      title: '客服支持',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        { text: '联系我', href: getPermalink('/tg') },
+        // { text: 'Community Forum', href: '#' },
+        // { text: 'Professional Services', href: '#' },
+        // { text: 'Skills', href: '#' },
+        // { text: 'Status', href: '#' },
       ],
     },
-    {
-      title: 'Platform',
-      links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
-      ],
-    },
-    {
-      title: 'Support',
-      links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
-      ],
-    },
-    {
-      title: 'Company',
-      links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
-      ],
-    },
+    // {
+    //   title: 'Company',
+    //   links: [
+    //     { text: 'About', href: '#' },
+    //     { text: 'Blog', href: '#' },
+    //     { text: 'Careers', href: '#' },
+    //     { text: 'Press', href: '#' },
+    //     { text: 'Inclusion', href: '#' },
+    //     { text: 'Social Impact', href: '#' },
+    //     { text: 'Shop', href: '#' },
+    //   ],
+    // },
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
@@ -179,7 +179,7 @@ export const footerData = {
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/astin4355526862' },
-    { ariaLabel: 'Telegram', icon: 'tabler:brand-telegram', href: 'https://t.me/spider_asmr' },
+    { ariaLabel: 'Telegram', icon: 'tabler:brand-telegram', href: 'https://t.me/flybird_home' },
     { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/channel/UCrue9puceK0-TT5_JYY448A?sub_confirmation=1' },
     // { ariaLabel: 'Wechat', icon: 'tabler:brand-wechat', href: '#' },
     // { ariaLabel: 'QQ', icon: 'tabler:brand-qq', href: '#' },
