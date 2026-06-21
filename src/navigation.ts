@@ -178,7 +178,7 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/astin4355526862' },
+    // { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/astin4355526862' },
     { ariaLabel: 'Telegram', icon: 'tabler:brand-telegram', href: 'https://t.me/flybird_home' },
     { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/channel/UCrue9puceK0-TT5_JYY448A?sub_confirmation=1' },
     // { ariaLabel: 'Wechat', icon: 'tabler:brand-wechat', href: '#' },
