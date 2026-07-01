@@ -118,6 +118,15 @@ export const headerData = {
         // },
       ],
     },
+    {
+      text: '赞助',
+      links: [
+        {
+          text: '打赏支持',
+          href: getPermalink('/coffee'),
+        },
+      ],
+    },
     // {
     //   text: 'Widgets',
     //   href: '#',
