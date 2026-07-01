@@ -1,12 +1,22 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
 
 // 直接导入图片
-import wechatPay from '../assets/images/wechat_pay.jpg';
-import alipay from '../assets/images/alipay1.jpg';
+import wechatPay from '~/assets/images/wechat_pay.jpg';
+import alipay from '~/assets/images/alipay1.jpg';
+
+const metadata = {
+  title: '请小郑喝杯咖啡',
+};
 ---
 
-<Layout title="请小郑喝杯咖啡 | Flybird 小郑">
+<Layout metadata={metadata}>
+
   <div class="max-w-4xl mx-auto px-6 py-16 text-center">
     <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white">
       ☕ 请小郑喝杯咖啡
@@ -40,7 +50,7 @@ import alipay from '../assets/images/alipay1.jpg';
       </div>
     </div>
 
-    <!-- 加密货币简单一行 -->
+    <!-- 加密货币 -->
     <div class="mt-12 text-sm text-gray-600 dark:text-gray-400">
       💰 加密货币 TRC20 (USDT)：
       <span class="font-mono bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded break-all select-all font-bold text-gray-900 dark:text-white text-base">
@@ -58,4 +68,5 @@ import alipay from '../assets/images/alipay1.jpg';
       ← 返回首页
     </a>
   </div>
+
 </Layout>
