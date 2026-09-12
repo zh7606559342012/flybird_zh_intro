@@ -3,35 +3,204 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
+const SHOP_URL = 'https://shop.flybirdhub.top/';
+const PRODUCTS_URL = 'https://shop.flybirdhub.top/products';
+const INTRO_URL = 'https://flybirdzhintro.vercel.app/';
+const JIANZHAN_URL = 'https://flybirdzhintro.vercel.app/jianzhan';
+const TG_BOT = 'https://t.me/stella_cox798_bot';
+const TG_USER = 'https://t.me/stella_cox798';
+const TG_GROUP = 'https://t.me/flybird_home';
+
 const metadata = {
-  title: '个人商业建站',
+  title: '个人商业建站 | Flybird 小郑',
+  description:
+    '支持个人站、商业博客、文档站、电商、落地页、作品集等网站搭建。可在 Flybird购物之家下单「销售网站建站支持」，或通过 Telegram 沟通需求。',
 };
+
+const siteTypes = [
+  { title: '个人站 / 官方站', desc: '个人品牌、公司介绍、关于页、联系页，结构清晰，适合长期对外展示。', icon: 'tabler:user-circle' },
+  { title: '商业博客', desc: '栏目、文章、公告、SEO 基础结构，适合内容沉淀和获客。', icon: 'tabler:notebook' },
+  { title: '文档站', desc: '教程、帮助中心、产品说明，适合工具型业务和售后说明。', icon: 'tabler:book-2' },
+  { title: '电子商务', desc: '商品卡片、购物车、游客下单、自动交付、订单查询，参考 Flybird购物之家。', icon: 'tabler:shopping-cart' },
+  { title: '落地页', desc: '单页转化结构：卖点、套餐、评价、行动按钮，适合投放和活动。', icon: 'tabler:layout-navbar' },
+  { title: '作品集', desc: '项目案例、图片墙、服务清单，适合设计师、开发者和创作者。', icon: 'tabler:photo' },
+  { title: '极简风格', desc: '少装饰、快加载、信息优先，适合个人介绍和咨询型业务。', icon: 'tabler:minus' },
+  { title: '官方风格', desc: '导航完整、板块清楚、信任感强，适合品牌和商务合作页。', icon: 'tabler:building' },
+];
+
+const deliverables = [
+  {
+    title: '介绍站能力',
+    description:
+      '可做成类似 <a href="https://flybirdzhintro.vercel.app/" target="_blank" rel="noopener noreferrer">flybirdzhintro.vercel.app</a> 的个人商业介绍站：多栏目导航、业务板块、联系页、深色模式。',
+    icon: 'tabler:world',
+  },
+  {
+    title: '销售站能力',
+    description:
+      '可做成类似 <a href="https://shop.flybirdhub.top/" target="_blank" rel="noopener noreferrer">shop.flybirdhub.top</a> 的数字商品店：精选商品、游客可购、自动交付、库存状态、购物车和订单查询。',
+    icon: 'tabler:building-store',
+  },
+  {
+    title: '交付方式',
+    description:
+      '店铺商品「销售网站建站支持」现价 16999 CNY，下单后 TG 联系 @stella_cox798_bot。也可以先看介绍页再沟通方案。',
+    icon: 'tabler:truck-delivery',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
-
-  <Content
-    isReversed
-    items={[
-      {
-        title: '个人商业建站',
-        description:
-          '支持个人、商业博客、文档、电子商务、落地页、极简风格、官方风格、其他、作品集类型的网站搭建建设，有需求的可以在联系我里面找到联系方式沟通',
-        icon: 'tabler:wand',
-      },
+  <Hero
+    tagline="Flybird 小郑 · IT 技术支持"
+    title="个人商业建站"
+    subtitle="支持个人、商业博客、文档、电子商务、落地页、极简风格、官方风格、作品集等网站搭建。需要销售站可直接在 Flybird购物之家下单，需要介绍站或定制方案可先看合作介绍页。"
+    actions={[
+      { variant: 'primary', text: '下单建站支持', href: PRODUCTS_URL, target: '_blank' },
+      { variant: 'secondary', text: '查看合作介绍', href: JIANZHAN_URL, target: '_blank' },
     ]}
     image={{
       src: '~/assets/images/jianzhan.jpg',
-      alt: 'Features Image',
-      style: 'width: 200px; height: 200px;',
+      alt: '个人商业建站',
+    }}
+  />
+
+  <Content
+    isReversed
+    items={deliverables}
+    image={{
+      src: '~/assets/images/jianzhan.jpg',
+      alt: '个人商业建站',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">个人商业建站</h3>
+      <p class="mt-2 text-muted">
+        原来的建站说明保留，同时接入商店下单入口和介绍站能力说明。有需求可以先看案例，再通过 Telegram 沟通。
+      </p>
     </Fragment>
   </Content>
 
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight dark:text-white">可搭建的网站类型</h2>
+        <p class="mt-2 text-muted">对应介绍站「个人商业建站」里列出的类型，按你的业务选一种或组合几种。</p>
+      </div>
+      <a href={INTRO_URL} target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-primary hover:underline">
+        打开介绍站 →
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        siteTypes.map((item) => (
+          <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+            <h3 class="text-lg font-bold dark:text-white">{item.title}</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">{item.desc}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+    <div class="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight dark:text-white">商店可直接购买</h2>
+        <p class="mt-2 text-muted">来自 Flybird购物之家的建站商品，游客可购、自动交付、有库存。</p>
+      </div>
+      <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-primary hover:underline">
+        进入商店 →
+      </a>
+    </div>
+
+    <a
+      href={PRODUCTS_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group grid overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900 md:grid-cols-[280px_1fr]"
+    >
+      <div class="bg-slate-100">
+        <img
+          src="https://shop.flybirdhub.top/uploads/category/2026/08/15e716d4-1ff0-41c6-a496-bc78c10fe7d5.png"
+          alt="销售网站建站支持"
+          class="h-full w-full object-cover"
+        />
+      </div>
+      <div class="flex flex-col justify-between p-6">
+        <div>
+          <p class="text-xs uppercase tracking-wide text-slate-400">分类 · ACCOUNT</p>
+          <h3 class="mt-1 text-2xl font-bold dark:text-white">销售网站建站支持</h3>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <span class="rounded-full bg-amber-50 px-2 py-0.5 text-[11px] text-amber-700 dark:bg-amber-500/10 dark:text-amber-300">游客可购</span>
+            <span class="rounded-full bg-sky-50 px-2 py-0.5 text-[11px] text-sky-700 dark:bg-sky-500/10 dark:text-sky-300">自动交付</span>
+            <span class="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">有库存</span>
+          </div>
+          <p class="mt-4 text-sm leading-6 text-slate-500 dark:text-slate-400">
+            下单后 TG 联系 @stella_cox798_bot。适合要搭销售站、商品页、购物车和售后流程的老板，交付内容以沟通确认的需求为准。
+          </p>
+        </div>
+        <div class="mt-6 flex items-end justify-between border-t border-slate-100 pt-4 dark:border-slate-800">
+          <div>
+            <p class="text-xs text-slate-400">价格</p>
+            <p class="text-2xl font-bold dark:text-white">
+              16999.00 <span class="text-sm font-medium text-slate-400">CNY</span>
+            </p>
+          </div>
+          <span class="text-sm font-medium text-primary">去商店购买 →</span>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <Features2
+    title="按两个现成站点理解交付范围"
+    subtitle="不是空泛承诺，而是把已经上线的两套站点能力写进这一页。"
+    columns={2}
+    items={[
+      {
+        title: '介绍站 · flybirdzhintro.vercel.app',
+        description: '个人商业介绍、业务板块、兴趣社群、投资交易、账号购买、建站说明、微信 / QQ / Telegram 联系页。适合个人品牌和商务合作。',
+        icon: 'tabler:id-badge-2',
+      },
+      {
+        title: '销售站 · shop.flybirdhub.top',
+        description: '精选商品、分类、购物车、游客下单、自动交付、库存标签、订单查询、公告博客。适合数字商品和代充销售。',
+        icon: 'tabler:building-store',
+      },
+      {
+        title: 'IT 技术支持',
+        description: '个人网站、公司商业网站、软件与科技生活问题解答。建站之外也可以一起处理上线、域名和基础运维问题。',
+        icon: 'tabler:tool',
+      },
+      {
+        title: '沟通与售后',
+        description: '日常联系 @stella_cox798，找不到人找机器人 @stella_cox798_bot，也可以进交流群 t.me/flybird_home。',
+        icon: 'tabler:brand-telegram',
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="先看案例，再下单或沟通"
+    subtitle="想直接买销售站支持就去商店；想先确认风格和栏目，就打开介绍站或 Telegram。"
+    actions={[
+      { variant: 'primary', text: 'Flybird购物之家', href: SHOP_URL, target: '_blank' },
+      { variant: 'secondary', text: '联系 @stella_cox798_bot', href: TG_BOT, target: '_blank' },
+    ]}
+  />
+
+  <section class="mx-auto max-w-3xl px-4 pb-16 text-center sm:px-6">
+    <p class="text-sm text-slate-500 dark:text-slate-400">
+      介绍站：<a class="text-primary hover:underline" href={INTRO_URL} target="_blank" rel="noopener noreferrer">{INTRO_URL}</a>
+      <br />
+      建站说明页：<a class="text-primary hover:underline" href={JIANZHAN_URL} target="_blank" rel="noopener noreferrer">{JIANZHAN_URL}</a>
+      <br />
+      私人 Telegram：<a class="text-primary hover:underline" href={TG_USER} target="_blank" rel="noopener noreferrer">@stella_cox798</a>
+      · 交流群：<a class="text-primary hover:underline" href={TG_GROUP} target="_blank" rel="noopener noreferrer">t.me/flybird_home</a>
+    </p>
+  </section>
 </Layout>
