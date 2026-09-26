@@ -5,72 +5,139 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
-const SHOP_URL = 'https://shop.flybirdhub.top/';
-const PRODUCTS_URL = 'https://shop.flybirdhub.top/products';
+const SHOP_URL = 'https://flybirdshop.com/';
+const CATEGORY_URL = 'https://flybirdshop.com/categories/数字商品';
 const TG_BOT = 'https://t.me/stella_cox798_bot';
+const TG_CHANNEL = 'https://t.me/+WCBhh7J_RWMwYTll';
+const WECHAT = 'Flybirdzh';
 
 const metadata = {
-  title: 'AI大模型合租拼车 | Flybird购物之家',
-  description: 'ChatGPT Plus / Pro 代充、Telegram 会员与销售建站支持，游客可购、自动交付。前往 Flybird购物之家下单。',
+  title: '数字商品 | Flybird商城',
+  description: 'Flybird商城数字商品：ChatGPT Plus / Go / Pro 代充、Codex 接码、Telegram / Gmail / 美区 Apple ID、油管 YPP 与销售建站支持。游客可购、自动交付。',
 };
 
 const products = [
   {
-    name: 'gpt_pro20x',
-    category: 'ACCOUNT',
+    name: 'chatgpt_pro20x',
+    category: '数字商品',
     price: '1339.00',
-    desc: '下单完，联系 @stella_cox798_bot 获得卡密兑换',
-    image: 'https://shop.flybirdhub.top/uploads/product/2026/09/2491f8df-44e4-4c2b-8e97-d0165c0cf44e.png',
-    href: PRODUCTS_URL,
+    desc: '之前充值过 20x 的才可下单。下单后联系 TG @stella_cox798_bot 或微信 Flybirdzh 兑换，私信请附带订单编号。',
+    image: 'https://flybirdshop.com/uploads/product/2026/09/4f659bfc-d34b-4cdd-b540-884f0a42df61.png',
+    href: 'https://flybirdshop.com/products/chatgpt_pro20x',
     highlight: 'Pro 20X',
+    stock: '库存紧张 · 剩 3',
   },
   {
-    name: 'gpt_pro5x',
-    category: 'ACCOUNT',
-    price: '749.00',
-    desc: '下单完，联系 @stella_cox798_bot 获得卡密兑换',
-    image: 'https://shop.flybirdhub.top/uploads/product/2026/09/9456b729-e93d-4d03-86b8-da53d7c95425.png',
-    href: PRODUCTS_URL,
+    name: 'chatgpt_pro5x',
+    category: '数字商品',
+    price: '709.00',
+    desc: '下单后联系 TG @stella_cox798_bot 或微信 Flybirdzh 兑换卡密，私信请附带订单编号。',
+    image: 'https://flybirdshop.com/uploads/product/2026/09/f7f9c18b-a060-4d50-b07a-84751385f10b.png',
+    href: 'https://flybirdshop.com/products/chatgpt_pro5x',
     highlight: 'Pro 5X',
+    stock: '库存紧张 · 剩 5',
   },
   {
-    name: 'gpt_plus',
-    category: 'ACCOUNT',
+    name: 'chatgpt_plus',
+    category: '数字商品',
     price: '139.00',
-    desc: '下单完，联系 @stella_cox798_bot 获得卡密兑换',
-    image: 'https://shop.flybirdhub.top/uploads/product/2026/09/214f3988-da9a-47da-8621-9957eab500fd.png',
-    href: PRODUCTS_URL,
-    highlight: '热销',
+    desc: '下单后联系 TG @stella_cox798_bot 或微信 Flybirdzh 兑换卡密，私信请附带订单编号。',
+    image: 'https://flybirdshop.com/uploads/product/2026/09/77ee3067-66d1-415d-a4b9-1fe30a16667f.png',
+    href: 'https://flybirdshop.com/products/chatgpt_plus',
+    highlight: '有库存',
+    stock: '有库存 · 15',
   },
   {
-    name: 'Telegram会员 3个月',
-    category: 'ACCOUNT',
-    price: '135.00',
-    desc: '如遇支付问题或售后问题，下单后 TG 联系 @stella_cox798_bot',
-    image: 'https://shop.flybirdhub.top/uploads/product/2026/08/80dd958f-ad2b-4fa2-95ff-0a4da8cf6574.png',
-    href: PRODUCTS_URL,
+    name: 'chatgpt_go',
+    category: '数字商品',
+    price: '55.00',
+    desc: '下单后联系 TG @stella_cox798_bot 或微信 Flybirdzh 兑换卡密，私信请附带订单编号。',
+    image: 'https://flybirdshop.com/uploads/product/2026/09/c78afc7c-dc15-43a9-b42c-acbfb5375662.png',
+    href: 'https://flybirdshop.com/products/chatgpt_go',
     highlight: '',
+    stock: '库存紧张 · 剩 3',
   },
   {
-    name: '销售网站建站支持',
-    category: 'ACCOUNT',
-    price: '16999.00',
-    desc: '下单后 TG 联系 @stella_cox798_bot',
-    image: 'https://shop.flybirdhub.top/uploads/category/2026/08/15e716d4-1ff0-41c6-a496-bc78c10fe7d5.png',
-    href: PRODUCTS_URL,
+    name: 'codex接码_短码',
+    category: '数字商品',
+    price: '10.00',
+    desc: '20 分钟有效码。支付或售后问题联系 TG @stella_cox798_bot 或微信 Flybirdzh，私信请附带订单编号。',
+    image: 'https://flybirdshop.com/uploads/product/2026/09/d403507e-55a8-47b2-948c-a5ba5b7b9f4c.png',
+    href: 'https://flybirdshop.com/products/codex接码_短码',
+    highlight: '',
+    stock: '库存紧张 · 剩 3',
+  },
+  {
+    name: 'codex接码_长码',
+    category: '数字商品',
+    price: '20.00',
+    desc: '一个月有效期。支付或售后问题联系 TG @stella_cox798_bot 或微信 Flybirdzh，私信请附带订单编号。',
+    image: 'https://flybirdshop.com/uploads/product/2026/09/ac7baf85-f22b-49ab-889e-ef2e68c3afde.png',
+    href: 'https://flybirdshop.com/products/codex接码_长码',
+    highlight: '',
+    stock: '库存紧张 · 剩 3',
+  },
+  {
+    name: 'Telegram',
+    category: '数字商品',
+    price: '40.00',
+    desc: 'TG 高权重老号。下单后联系 TG @stella_cox798_bot 或微信 Flybirdzh，私信请附带订单编号。',
+    image: 'https://flybirdshop.com/uploads/product/2026/09/b1c861ae-5622-4c83-a7bf-13fc419f4375.png',
+    href: 'https://flybirdshop.com/products/Telegram',
+    highlight: '',
+    stock: '库存紧张 · 剩 3',
+  },
+  {
+    name: 'Gmail邮箱',
+    category: '数字商品',
+    price: '30.00',
+    desc: '高权重 Gmail 老账号。下单后联系 TG @stella_cox798_bot 或微信 Flybirdzh，私信请附带订单编号。',
+    image: 'https://flybirdshop.com/uploads/product/2026/09/cb2aaf45-7cf4-4aa8-a82c-2f74d49adc3d.png',
+    href: 'https://flybirdshop.com/products/Gmail邮箱',
+    highlight: '',
+    stock: '库存紧张 · 剩 3',
+  },
+  {
+    name: '美区AppleId',
+    category: '数字商品',
+    price: '30.00',
+    desc: '高权重美区 Apple ID 老号。下单后联系 TG @stella_cox798_bot 或微信 Flybirdzh，私信请附带订单编号。',
+    image: 'https://flybirdshop.com/uploads/product/2026/09/ee5b06c7-65c7-4dcc-9c13-f895289784c1.png',
+    href: 'https://flybirdshop.com/products/美区AppleId',
+    highlight: '',
+    stock: '库存紧张 · 剩 3',
+  },
+  {
+    name: '油管ypp号',
+    category: '数字商品',
+    price: '3499.00',
+    desc: '到达 YouTube 获利 YPP 门槛账号。下单后联系客服兑换，详细定制可私信，请附带订单编号。',
+    image: 'https://flybirdshop.com/uploads/product/2026/09/23126c99-299d-49a3-8fab-17b69e0acf88.png',
+    href: 'https://flybirdshop.com/products/油管ypp号',
+    highlight: 'YPP',
+    stock: '库存紧张 · 剩 2',
+  },
+  {
+    name: '数字销售网站建站支持',
+    category: '数字商品',
+    price: '6999.00',
+    desc: '下单后联系 TG @stella_cox798_bot 或微信 Flybirdzh 对接交付，私信请附带订单编号。',
+    image: 'https://flybirdshop.com/uploads/product/2026/09/929cdcb6-d247-48cd-b27e-bb7c612cc217.png',
+    href: 'https://flybirdshop.com/products/数字销售网站建站支持',
     highlight: '定制',
+    stock: '库存紧张 · 剩 2',
   },
 ];
 ---
 
 <Layout metadata={metadata}>
   <Hero
-    tagline="Flybird购物之家"
-    title="AI大模型合租拼车 · 官方代充商店"
-    subtitle="精选 ChatGPT Plus / Pro、Telegram 会员与销售建站支持。游客可购、自动交付、有库存。下单后联系 @stella_cox798_bot 兑换。"
+    tagline="Flybird商城 · 数字商品"
+    title="出海常用数字商品，游客可购 · 自动交付"
+    subtitle="ChatGPT Plus / Go / Pro 代充、Codex 接码、Telegram / Gmail / 美区 Apple ID、油管 YPP 与销售建站。现货 11 件，下单后联系 @stella_cox798_bot 或微信 Flybirdzh，私信附带订单号。"
     actions={[
-      { variant: 'primary', text: '进入商店下单', href: SHOP_URL, target: '_blank' },
-      { variant: 'secondary', text: '查看全部商品', href: PRODUCTS_URL, target: '_blank' },
+      { variant: 'primary', text: '进入数字商品分类', href: CATEGORY_URL, target: '_blank' },
+      { variant: 'secondary', text: '打开商城首页', href: SHOP_URL, target: '_blank' },
     ]}
   />
 
@@ -78,31 +145,31 @@ const products = [
     isReversed
     items={[
       {
-        title: 'Flybird购物之家',
+        title: 'Flybird商城',
         description:
-          '探索我们精心挑选的优质数字资产系列。畅享 AI 账号代充、Telegram 会员与销售网站建站支持，极速发货，售后走 Telegram 机器人。<br><br>购买入口：<a href="https://shop.flybirdhub.top/" target="_blank" rel="noopener noreferrer">https://shop.flybirdhub.top/</a><br>售后机器人：<a href="https://t.me/stella_cox798_bot" target="_blank" rel="noopener noreferrer">@stella_cox798_bot</a>',
+          '在这里可以买到出海常用的数字商品服务。分类入口：<a href="https://flybirdshop.com/categories/数字商品" target="_blank" rel="noopener noreferrer">数字商品</a><br>TG 客服：<a href="https://t.me/stella_cox798_bot" target="_blank" rel="noopener noreferrer">@stella_cox798_bot</a><br>微信客服：Flybirdzh<br>TG 频道：<a href="https://t.me/+WCBhh7J_RWMwYTll" target="_blank" rel="noopener noreferrer">https://t.me/+WCBhh7J_RWMwYTll</a>',
         icon: 'tabler:shopping-bag',
       },
       {
         title: '游客可购 · 自动交付',
-        description: '无需先注册也能下单。支付完成后按商品说明联系机器人领取卡密或开通服务。',
+        description: '无需先注册也能下单。支付完成后按商品说明联系客服领取卡密或开通服务，私信请附带交易订单编号。',
         icon: 'tabler:bolt',
       },
       {
-        title: '现货有库存',
-        description: '当前精选商品均为有库存状态，适合马上开通 Plus / Pro 或补 Telegram 会员。',
+        title: '支持支付宝 / USDT',
+        description: '商城提供支付宝与 USDT 支付。下单后若显示未支付或未发货，请等待约 3 分钟再查订单。售后默认按下单时间 24 小时内处理。',
         icon: 'tabler:circle-check',
       },
     ]}
     image={{
-      src: 'https://shop.flybirdhub.top/uploads/product/2026/09/214f3988-da9a-47da-8621-9957eab500fd.png',
-      alt: 'Flybird购物之家精选商品',
+      src: 'https://flybirdshop.com/uploads/category/2026/09/c9a7fe7a-a905-4f92-84d6-ebebcd159128.png',
+      alt: 'Flybird商城数字商品分类',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">AI大模型合租拼车</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">数字商品</h3>
       <p class="mt-2 text-muted">
-        原合租介绍页已接入 Flybird 代充商店，下面直接展示店铺精选商品，点击卡片即可去官网购买。
+        内容对齐商城「数字商品」分类现货，点击卡片进入对应商品页下单。
       </p>
     </Fragment>
   </Content>
@@ -110,20 +177,20 @@ const products = [
   <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <h2 class="text-3xl font-bold tracking-tight dark:text-white">精选商品</h2>
-        <p class="mt-2 text-muted">探索我们精心挑选的优质数字资产系列。</p>
+        <h2 class="text-3xl font-bold tracking-tight dark:text-white">数字商品 · 11 件在售</h2>
+        <p class="mt-2 text-muted">价格与库存取自 Flybird 商城分类页，下单请以官网实时信息为准。</p>
       </div>
       <a
-        href={PRODUCTS_URL}
+        href={CATEGORY_URL}
         target="_blank"
         rel="noopener noreferrer"
         class="text-sm font-medium text-primary hover:underline"
       >
-        查看全部商品 →
+        查看全部分类商品 →
       </a>
     </div>
 
-    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {
         products.map((item) => (
           <a
@@ -141,7 +208,7 @@ const products = [
               )}
             </div>
             <div class="flex flex-1 flex-col p-4">
-              <p class="text-xs uppercase tracking-wide text-slate-400">分类 · {item.category}</p>
+              <p class="text-xs uppercase tracking-wide text-slate-400">{item.category}</p>
               <h3 class="mt-1 text-lg font-bold dark:text-white">{item.name}</h3>
               <div class="mt-2 flex flex-wrap gap-1.5">
                 <span class="rounded-full bg-amber-50 px-2 py-0.5 text-[11px] text-amber-700 dark:bg-amber-500/10 dark:text-amber-300">
@@ -151,7 +218,7 @@ const products = [
                   自动交付
                 </span>
                 <span class="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
-                  有库存
+                  {item.stock}
                 </span>
               </div>
               <p class="mt-3 line-clamp-3 text-sm text-slate-500 dark:text-slate-400">{item.desc}</p>
@@ -174,34 +241,35 @@ const products = [
   </section>
 
   <Features2
-    title="为什么从这里买"
-    subtitle="把原来的合租介绍，和 Flybird 代充商店的履约方式合在一起。"
+    title="分类里现在有什么"
+    subtitle="按 Flybird 商城数字商品分类整理，下单以官网为准。"
     columns={3}
     items={[
       {
-        title: 'ChatGPT Plus / Pro',
-        description: 'Plus ¥139、Pro 5X ¥749、Pro 20X ¥1339。下单后联系机器人领取卡密兑换。',
+        title: 'ChatGPT 代充',
+        description: 'Plus ¥139、Go ¥55、Pro 5X ¥709、Pro 20X ¥1339。20X 仅限之前充过 20x 的账号。',
         icon: 'tabler:brand-openai',
       },
       {
-        title: 'Telegram 会员 3 个月',
-        description: '¥135，游客可购、自动交付。支付或售后问题直接找 @stella_cox798_bot。',
-        icon: 'tabler:brand-telegram',
+        title: '接码与账号',
+        description: 'Codex 短码 ¥10 / 长码 ¥20，Telegram ¥40，Gmail ¥30，美区 Apple ID ¥30，油管 YPP ¥3499。',
+        icon: 'tabler:key',
       },
       {
-        title: '销售网站建站支持',
-        description: '¥16999，适合要搭一套销售站的卖家。下单后 Telegram 对接交付。',
+        title: '销售网站建站',
+        description: '数字销售网站建站支持 ¥6999。下单后 Telegram 或微信对接交付。',
         icon: 'tabler:world-www',
       },
     ]}
   />
 
   <CallToAction
-    title="去 Flybird购物之家下单"
-    subtitle="商店现货可购。下单完成后，通过 @stella_cox798_bot 兑换卡密或处理售后。"
+    title="去 Flybird商城下单"
+    subtitle={`游客可购、自动交付。客服 TG @stella_cox798_bot，微信 ${WECHAT}。下单后若未支付/未发货，请等待约 3 分钟再查询。`}
     actions={[
-      { variant: 'primary', text: '打开商店', href: SHOP_URL, target: '_blank' },
-      { variant: 'secondary', text: '联系售后机器人', href: TG_BOT, target: '_blank' },
+      { variant: 'primary', text: '打开数字商品', href: CATEGORY_URL, target: '_blank' },
+      { variant: 'secondary', text: '联系 TG 客服', href: TG_BOT, target: '_blank' },
+      { variant: 'secondary', text: '加入 TG 频道', href: TG_CHANNEL, target: '_blank' },
     ]}
   />
 </Layout>
