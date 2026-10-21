@@ -109,3 +109,5 @@ const DONATE = {
   wechat_qr: "src/assets/images/wechat_pay.jpg",
   alipay_qr: "src/assets/images/alipay1.jpg",
 };
+
+// 2026-10-22 部署触发（无内容变更）
