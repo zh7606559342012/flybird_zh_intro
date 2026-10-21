@@ -27,7 +27,6 @@ const TOOLS = [
   { cat: "bank", name: "Wise", initials: "W", tag: "多币种账户 · 跨境转账 0 隐藏费用", perk: "专属链接注册", code: "", link: "https://wise.com/invite/dic/qvs12vn", video: "PKQCmUSA37Y" },
   { cat: "bank", name: "StarryBlu", initials: "SB", tag: "新加坡多币种账户 · 护照+地址证明过审", perk: "填邀请码注册", code: "MHQK00K", link: "", video: "k65ySsr3Ops" },
   { cat: "bank", name: "Wovia 沃维亚", initials: "WV", tag: "虚拟银行卡 · 11.1U 低成本开卡", perk: "填邀请码注册", code: "HIoh6jqdyh", link: "https://app.wovia.global/?ref=HIoh6jqdyh", video: "8vjc4oX_ULo" },
-  { cat: "bank", name: "LocalCard", initials: "LC", tag: "加密出金卡 · 消费出金一体", perk: "专属链接注册", code: "", link: "https://www.localcard.hk/#/pages/H5/login?code=alml0HjT", video: "PKjr-AFScjU" },
   { cat: "bank", name: "Bitget Wallet × Fiat24", initials: "BW", tag: "U 卡 · 加密资产线下消费", perk: "开卡送 5U 奖励（见教程）", code: "", link: "", video: "MC1oLpL0wEw" },
 
   // ---------- 硬件钱包 ----------
@@ -39,10 +38,9 @@ const TOOLS = [
   { cat: "esim", name: "海外手机号避坑指南", initials: "📱", tag: "giffgaff 之后用什么？全方案对比", perk: "先看指南再下手", code: "", link: "", video: "Ob8utfMXnhE" },
 
   // ---------- AI 订阅与效率工具 ----------
-  { cat: "ai", name: "GamsGo", initials: "GG", tag: "ChatGPT/Claude 订阅合租 · 支付宝付款", perk: "结账填优惠码", code: "RT7J6", link: "https://www.gamsgo.com/?promote=sTtvC", video: "1xXUOGc2UGM" },
-  { cat: "ai", name: "PPToken", initials: "PP", tag: "AI 中转站 · 低成本用大模型", perk: "专属链接注册", code: "", link: "https://www.pptoken.org/?promo=PP4R8", video: "" },
+  { cat: "ai", name: "Flybirdshop小店", initials: "🛒", tag: "AI / 社媒成品号 · 博主自营", perk: "博主自营店铺", code: "", link: "https://flybirdshop.com/", video: "" },
   { cat: "ai", name: "DuoPlus 云手机", initials: "DP", tag: "跨境电商 / TikTok 矩阵运营", perk: "海外账号批量管理", code: "", link: "", video: "sJ_CWdkcKz0" },
-  { cat: "ai", name: "账号购买小店", initials: "🛒", tag: "AI / 社媒成品号 · 博主自营", perk: "博主自营店铺", code: "", link: "https://accboy7flybird.acceboy.com/", video: "" },
+  { cat: "ai", name: "账号星球店铺", initials: "🛒", tag: "AI / 社媒成品号", perk: "第三方店铺", code: "", link: "https://accboy7flybird.acceboy.com/", video: "" },
 ];
 
 // ---------- 教程视频（视频页 + 分类页引用） ----------
@@ -59,7 +57,7 @@ const VIDEOS = [
   { id: "zo7hCqgkk74", title: "OneKey 冷钱包开箱实测", desc: "激活、使用新手教程，资产保险库", cat: "wallet" },
   { id: "g5RKvxCiHlo", title: "ClubSIM 申请全攻略", desc: "一年 6 港币永久保住香港号码", cat: "esim" },
   { id: "BPszmXbbjTI", title: "Xesim + Eskimo 组合方案", desc: "保号 + 一机多号，eSIM 还是实体卡", cat: "esim" },
-  { id: "1xXUOGc2UGM", title: "支付宝订阅海外 AI 大模型", desc: "一杯奶茶钱订阅 ChatGPT/Claude", cat: "ai" },
+  { id: "1xXUOGc2UGM", title: "微信 支付宝订阅海外 AI 大模型", desc: "人民币订阅 ChatGPT", cat: "ai" },
   { id: "sJ_CWdkcKz0", title: "DuoPlus 云手机实测", desc: "跨境电商、TikTok 矩阵运营必备", cat: "ai" },
 ];
 
@@ -100,7 +98,6 @@ const TICKER_ITEMS = [
   "BiyaPay 邀请码 30524729 · 充值50U送30U手续费抵扣",
   "OneKey 邀请码 astin16888 · 专属链接享9折",
   "Kraken 海妖 邀请码 b4hp7wsp",
-  "GamsGo 优惠码 RT7J6 · AI订阅合租",
   "StarryBlu 邀请码 MHQK00K",
   "Wovia 邀请码 HIoh6jqdyh · 11.1U开卡",
   "OKX / Bitget / Wise 专属注册链接在工具库",
