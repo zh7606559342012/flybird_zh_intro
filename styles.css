@@ -260,3 +260,46 @@ a.series-card:hover, div.series-card:hover { transform: translateY(-3px); border
   .ticker-track { animation: none; }
   .hero-kicker::after { animation: none; }
 }
+
+/* ---------- 质感精修（对标概念图：星云 + 玻璃拟态 + 渐变字） ---------- */
+body {
+  background:
+    radial-gradient(1100px 560px at 80% -10%, rgba(109, 179, 255, 0.16), transparent 60%),
+    radial-gradient(900px 520px at 8% 22%, rgba(147, 130, 255, 0.12), transparent 60%),
+    radial-gradient(700px 600px at 55% 110%, rgba(38, 92, 168, 0.14), transparent 65%),
+    linear-gradient(rgba(126, 178, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(126, 178, 255, 0.02) 1px, transparent 1px),
+    var(--bg);
+  background-size: auto, auto, auto, 44px 44px, 44px 44px, auto;
+}
+.hero h1, .page-hero h1 {
+  background: linear-gradient(180deg, #ffffff 5%, #bcd7ff 52%, #6db3ff 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.hero h1 em, .page-hero h1 em {
+  background: linear-gradient(180deg, #ffe9b0, #ffd479 60%, #e8a94c);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  text-shadow: none;
+}
+.tool-card, .series-card, .contact-card, .course-box,
+.donate-card, .video-card, .usdt-box, .freedom-card {
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.014) 55%), var(--bg-card);
+  border-color: rgba(160, 200, 255, 0.22);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+.tool-card:hover, a.series-card:hover, div.series-card:hover, .contact-card:hover {
+  border-color: rgba(140, 195, 255, 0.6);
+  box-shadow: 0 16px 40px rgba(20, 60, 140, 0.45), 0 0 24px rgba(109, 179, 255, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.btn-primary, .tool-btn {
+  box-shadow: 0 8px 24px rgba(79, 142, 247, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+.tool-btn.ghost { box-shadow: none; }
+.cat-nav a, .contact-chip, .filter-btn {
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(4px);
+}
+.tool-avatar { background: linear-gradient(150deg, rgba(109, 179, 255, 0.28), rgba(109, 179, 255, 0.08)); }
+.ticker { box-shadow: 0 1px 18px rgba(38, 92, 168, 0.35); }

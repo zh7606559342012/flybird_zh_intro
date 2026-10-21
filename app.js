@@ -165,7 +165,7 @@ bindCopyButtons(document);
   let W, H, stars = [], meteor = null;
   function makeStars() {
     stars = [];
-    const n = Math.min(170, Math.floor(W * H / 11000));
+    const n = Math.min(240, Math.floor(W * H / 7000));
     for (let i = 0; i < n; i++) {
       stars.push({
         x: Math.random() * W, y: Math.random() * H,
@@ -187,6 +187,13 @@ bindCopyButtons(document);
   window.addEventListener("resize", resize);
   function drawStar(s, t) {
     const tw = reduced ? 1 : 0.72 + 0.28 * Math.sin(t * s.sp * 60 + s.ph);
+    if (s.r > 1.05) { // 大星加一层柔光晕
+      ctx.globalAlpha = s.a * 0.16 * tw;
+      ctx.fillStyle = s.gold ? "#ffd479" : "#9cc8ff";
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r * 4.2, 0, Math.PI * 2);
+      ctx.fill();
+    }
     ctx.globalAlpha = s.a * tw;
     ctx.fillStyle = s.gold ? "#ffd479" : "#cfe2ff";
     ctx.beginPath();
