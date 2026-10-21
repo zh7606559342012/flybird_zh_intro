@@ -1,37 +1,32 @@
 # Flybird 小郑 · 出海工具站
 
-仿照工具导航站版式、为 Flybird 小郑量身重构的静态网站：顶部福利滚动播报、精选专题、六大分类工具库（邀请码一键复制）、YouTube 教程视频点开即播、业务合作与关于板块。纯静态，零构建，部署到 Vercel 后秒开。
+多页静态站（零构建，Vercel 直接部署）：顶部福利滚动播报 + 全站导航，内容全部来自 Flybird 小郑自己的频道与旧站。
+
+## 页面结构
+
+| 页面 | 内容 |
+| --- | --- |
+| `index.html` | 首页：栏目入口、热门福利、精选专题、最新教程 |
+| `exchange.html` / `broker.html` / `bank.html` / `wallet.html` / `esim.html` / `ai.html` | 六大工具分类页：品牌卡（邀请码一键复制 + 专属链接 + 教程） |
+| `videos.html` | 全部教程视频（点开即播） |
+| `invest.html` | 投资专区：A股入门课 5 课、基金入门课 5 课、资产配置精选、投资社群 |
+| `training.html` | 自媒体 / YouTube 培训：陪跑服务 + 频道干货视频 |
+| `services.html` | 业务合作：陪跑、社群、投资交易、账号购买、IT 支持、付费咨询 |
+| `donate.html` | 打赏页：微信赞赏码、支付宝码、USDT (TRC20) 地址 |
+| `about.html` | 关于小郑与联系方式 |
 
 ## 文件说明
 
 | 文件 | 作用 |
 | --- | --- |
-| `index.html` | 页面结构（板块文案在这里改） |
-| `data.js` | **工具库数据**：所有品牌、邀请码、链接、教程视频都在这里，日常维护只改这个文件 |
-| `app.js` | 渲染与交互逻辑（筛选、复制邀请码、视频加载） |
-| `styles.css` | 全部样式（深色主题，配色变量在文件顶部 `:root`） |
-| `vercel.json` | Vercel 配置 |
+| `data.js` | **全站数据**：工具、邀请码、视频、课程、打赏信息——日常维护只改这个文件 |
+| `app.js` | 渲染与交互（工具卡、视频、课程、复制按钮） |
+| `styles.css` | 全部样式（深色主题） |
+| `vercel.json` | 静态部署配置（无构建、根目录直出、cleanUrls） |
 
-## 部署到 Vercel（两种方式，任选其一）
+> 打赏二维码与头像图片引用仓库内旧 Astro 项目的图片：`src/assets/images/wechat_pay.jpg`、`alipay1.jpg`、`person_logo.png`，请勿删除这三个文件。
+> 旧版 Astro 源码（src/、astro.config.ts 等）保留在仓库中备查，当前线上生效的是本静态站（vercel.json 已配置为静态部署）。
 
-**方式 A：GitHub 导入（推荐，后续改代码自动更新网站）**
-1. 把本文件夹的全部文件传到一个 GitHub 仓库（可以新建仓库，也可以替换旧仓库 `flybird_zh_intro` 的内容）。
-2. 打开 vercel.com → Add New → Project → 选择该仓库 → Framework Preset 选 `Other` → Deploy。
+## 日常维护
 
-**方式 B：拖拽部署（最快）**
-1. 打开 vercel.com/new，把整个 `flybird-site` 文件夹拖进去即可。
-
-## 日常维护（改邀请码 / 加新工具）
-
-打开 `data.js`，在 `TOOLS` 数组里找到对应品牌改 `code`（邀请码）和 `link`（链接）；新增工具就复制一段改内容。`video` 填 YouTube 链接中 `v=` 后面的 ID。改完提交到 GitHub，Vercel 会自动重新部署。
-
-## 已收录（来自频道视频说明区，2026-10 整理）
-
-- 交易所：OKX（76590941）、Bitget、Kraken（b4hp7wsp）
-- 券商：BiyaPay（30524729）、BIT、IBKR 盈透
-- 银行支付：Wise、StarryBlu（MHQK00K）、Wovia（HIoh6jqdyh）、LocalCard、Bitget Wallet × Fiat24
-- 硬件钱包：OneKey（astin16888，9 折）
-- eSIM：ClubSIM、Xesim + Eskimo、海外手机号避坑指南
-- AI 工具：GamsGo（RT7J6）、PPToken、DuoPlus、账号购买小店
-
-> BIT、IBKR、ClubSIM、DuoPlus 等暂未在视频说明区找到专属邀请链接，卡片暂时只挂了教程视频；拿到链接后在 `data.js` 里填上 `link` 即可，按钮会自动出现。
+改邀请码/加工具/加视频：编辑 `data.js` 后提交，Vercel 自动重新部署。`video` 填 YouTube 链接中 `v=` 后面的 ID。
