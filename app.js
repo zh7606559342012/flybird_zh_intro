@@ -48,6 +48,8 @@ function toolCard(tool) {
 
 function bindCopyButtons(root) {
   root.querySelectorAll("[data-copy]").forEach(btn => {
+    if (btn.dataset.bound) return;
+    btn.dataset.bound = "1";
     btn.addEventListener("click", async () => {
       try { await navigator.clipboard.writeText(btn.dataset.copy); }
       catch (e) {
@@ -150,3 +152,42 @@ if (usdtEl && typeof DONATE !== "undefined") {
   if (wx) wx.src = DONATE.wechat_qr;
   if (ali) ali.src = DONATE.alipay_qr;
 }
+
+// 页面里静态的复制按钮（如联系页）统一绑定
+bindCopyButtons(document);
+
+// ---------- 黑客帝国数字雨背景（原创实现） ----------
+(function matrixRain() {
+  const canvas = document.getElementById("matrixRain");
+  if (!canvas) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const ctx = canvas.getContext("2d");
+  const CHARS = "ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾇ0123456789ABCDEF$#*+=<>".split("");
+  let cols, drops, W, H;
+  const FONT = 15;
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    cols = Math.floor(W / FONT);
+    drops = Array.from({ length: cols }, () => Math.floor(Math.random() * (H / FONT)));
+  }
+  resize();
+  window.addEventListener("resize", resize);
+  let last = 0;
+  function draw(ts) {
+    requestAnimationFrame(draw);
+    if (ts - last < 50) return; // 约 20fps，省电
+    last = ts;
+    ctx.fillStyle = "rgba(1, 5, 3, 0.10)";
+    ctx.fillRect(0, 0, W, H);
+    ctx.font = FONT + "px monospace";
+    for (let i = 0; i < cols; i++) {
+      const ch = CHARS[Math.floor(Math.random() * CHARS.length)];
+      ctx.fillStyle = Math.random() < 0.02 ? "#aaffcc" : "#00cc44";
+      ctx.fillText(ch, i * FONT, drops[i] * FONT);
+      if (drops[i] * FONT > H && Math.random() > 0.976) drops[i] = 0;
+      drops[i]++;
+    }
+  }
+  requestAnimationFrame(draw);
+})();

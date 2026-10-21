@@ -1,4 +1,4 @@
-# Flybird 小郑 · 出海工具站
+# Flybird 小郑 · 出海工具站（黑客帝国科技风）
 
 多页静态站（零构建，Vercel 直接部署）：顶部福利滚动播报 + 全站导航，内容全部来自 Flybird 小郑自己的频道与旧站。
 
@@ -13,7 +13,8 @@
 | `training.html` | 自媒体 / YouTube 培训：陪跑服务 + 频道干货视频 |
 | `services.html` | 业务合作：陪跑、社群、投资交易、账号购买、IT 支持、付费咨询 |
 | `donate.html` | 打赏页：微信赞赏码、支付宝码、USDT (TRC20) 地址 |
-| `about.html` | 关于小郑与联系方式 |
+| `about.html` | 关于小郑 |
+| `contact.html` | 联系页：私人 TG、TG 交流群/频道/机器人、QQ、微信 |
 
 ## 文件说明
 
