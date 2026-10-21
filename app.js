@@ -156,38 +156,80 @@ if (usdtEl && typeof DONATE !== "undefined") {
 // 页面里静态的复制按钮（如联系页）统一绑定
 bindCopyButtons(document);
 
-// ---------- 黑客帝国数字雨背景（原创实现） ----------
-(function matrixRain() {
-  const canvas = document.getElementById("matrixRain");
+// ---------- 深蓝星空背景：闪烁星野 + 偶发流星（原创实现） ----------
+(function starfield() {
+  const canvas = document.getElementById("starCanvas");
   if (!canvas) return;
-  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const ctx = canvas.getContext("2d");
-  const CHARS = "ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾇ0123456789ABCDEF$#*+=<>".split("");
-  let cols, drops, W, H;
-  const FONT = 15;
+  const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let W, H, stars = [], meteor = null;
+  function makeStars() {
+    stars = [];
+    const n = Math.min(170, Math.floor(W * H / 11000));
+    for (let i = 0; i < n; i++) {
+      stars.push({
+        x: Math.random() * W, y: Math.random() * H,
+        r: Math.random() * 1.3 + 0.3,
+        a: Math.random() * 0.55 + 0.25,
+        sp: Math.random() * 0.012 + 0.003,
+        ph: Math.random() * Math.PI * 2,
+        gold: Math.random() < 0.22,
+        drift: Math.random() * 0.05 + 0.008,
+      });
+    }
+  }
   function resize() {
     W = canvas.width = window.innerWidth;
     H = canvas.height = window.innerHeight;
-    cols = Math.floor(W / FONT);
-    drops = Array.from({ length: cols }, () => Math.floor(Math.random() * (H / FONT)));
+    makeStars();
   }
   resize();
   window.addEventListener("resize", resize);
+  function drawStar(s, t) {
+    const tw = reduced ? 1 : 0.72 + 0.28 * Math.sin(t * s.sp * 60 + s.ph);
+    ctx.globalAlpha = s.a * tw;
+    ctx.fillStyle = s.gold ? "#ffd479" : "#cfe2ff";
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  function drawMeteor() {
+    if (!meteor) return;
+    const m = meteor;
+    const grad = ctx.createLinearGradient(m.x, m.y, m.x - m.vx * 9, m.y - m.vy * 9);
+    grad.addColorStop(0, "rgba(230,242,255,0.95)");
+    grad.addColorStop(1, "rgba(230,242,255,0)");
+    ctx.globalAlpha = 1;
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = 1.8;
+    ctx.beginPath();
+    ctx.moveTo(m.x, m.y);
+    ctx.lineTo(m.x - m.vx * 9, m.y - m.vy * 9);
+    ctx.stroke();
+    m.x += m.vx; m.y += m.vy; m.life--;
+    if (m.life <= 0 || m.x > W + 60 || m.y > H + 60) meteor = null;
+  }
   let last = 0;
-  function draw(ts) {
-    requestAnimationFrame(draw);
-    if (ts - last < 50) return; // 约 20fps，省电
+  function frame(ts) {
+    requestAnimationFrame(frame);
+    if (ts - last < 33) return;
     last = ts;
-    ctx.fillStyle = "rgba(1, 5, 3, 0.10)";
-    ctx.fillRect(0, 0, W, H);
-    ctx.font = FONT + "px monospace";
-    for (let i = 0; i < cols; i++) {
-      const ch = CHARS[Math.floor(Math.random() * CHARS.length)];
-      ctx.fillStyle = Math.random() < 0.02 ? "#aaffcc" : "#00cc44";
-      ctx.fillText(ch, i * FONT, drops[i] * FONT);
-      if (drops[i] * FONT > H && Math.random() > 0.976) drops[i] = 0;
-      drops[i]++;
+    ctx.clearRect(0, 0, W, H);
+    for (const s of stars) {
+      drawStar(s, ts / 1000);
+      if (!reduced) {
+        s.y += s.drift; s.x -= s.drift * 0.35;
+        if (s.y > H + 2) { s.y = -2; s.x = Math.random() * W; }
+        if (s.x < -2) s.x = W + 2;
+      }
+    }
+    ctx.globalAlpha = 1;
+    if (!reduced) {
+      if (!meteor && Math.random() < 0.0035) {
+        meteor = { x: Math.random() * W * 0.6, y: Math.random() * H * 0.3, vx: 7 + Math.random() * 4, vy: 3.4 + Math.random() * 2, life: 46 };
+      }
+      drawMeteor();
     }
   }
-  requestAnimationFrame(draw);
+  requestAnimationFrame(frame);
 })();
