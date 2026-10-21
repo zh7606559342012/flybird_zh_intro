@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flybird 小郑 · 出海金融与科技生活工具站</title>
+<meta name="description" content="Flybird 小郑的出海工具库：加密货币交易所、美股券商、海外银行与跨境支付、硬件钱包、eSIM 海外号码、AI 订阅工具，附保姆级教程视频与专属邀请码。">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕊️</text></svg>">
+</head>
+<body>
+
+<!-- 顶部滚动播报 -->
+<div class="ticker" aria-label="最新福利播报">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- 导航 -->
+<header class="nav">
+  <a class="brand" href="#top">
+    <span class="brand-badge">FZ</span>
+    <span class="brand-name">Flybird 小郑</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#tools">工具库</a>
+    <a href="#videos">教程视频</a>
+    <a href="#services">业务合作</a>
+    <a href="#about">关于我</a>
+  </nav>
+  <a class="nav-cta" href="https://www.youtube.com/@Benz_ZH" target="_blank" rel="noopener">YouTube 频道</a>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <p class="hero-kicker">FLYBIRD · 出海实操工具站</p>
+    <h1>普通人的<em>出海金融</em>通关工具箱</h1>
+    <p class="hero-sub">不是博客，是工具站。开户、出金、保号、订阅 AI——你想办的事，这里有<strong>保姆级教程视频 + 亲测工具 + 专属邀请码</strong>，跟着视频一步步抄作业就行。</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#tools">打开工具库 →</a>
+      <a class="btn-ghost" href="#videos">先看教程视频</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>170+</strong><span>期实操视频</span></div>
+      <div><strong>6</strong><span>大工具分类</span></div>
+      <div><strong>10+</strong><span>合作品牌福利</span></div>
+    </div>
+  </section>
+
+  <!-- 精选专题 -->
+  <section class="section" id="series">
+    <p class="section-kicker">FEATURED · 精选专题</p>
+    <h2>小郑出品 · 系列合集</h2>
+    <div class="series-grid">
+      <a class="series-card" href="https://www.youtube.com/watch?v=pL_hmKkgHTI" target="_blank" rel="noopener">
+        <span class="series-emoji">🏦</span>
+        <h3>赴港开卡避坑指南</h3>
+        <p>2 年 5 赴香港、3 家银行实测，中银香港 / 汇丰开户全流程与避坑清单。</p>
+        <span class="series-link">看合集 →</span>
+      </a>
+      <a class="series-card" href="https://www.youtube.com/watch?v=Ob8utfMXnhE" target="_blank" rel="noopener">
+        <span class="series-emoji">📱</span>
+        <h3>海外手机号保号全案</h3>
+        <p>giffgaff 清退之后还能用什么？全球主流海外号码方案横向对比。</p>
+        <span class="series-link">看合集 →</span>
+      </a>
+      <a class="series-card" href="https://www.youtube.com/watch?v=V_3cQCNfY6o" target="_blank" rel="noopener">
+        <span class="series-emoji">🤖</span>
+        <h3>AI 工具注册与订阅</h3>
+        <p>Muse / ChatGPT 注册必过教程、免海外卡订阅、账号避坑全攻略。</p>
+        <span class="series-link">看合集 →</span>
+      </a>
+      <a class="series-card" href="https://www.youtube.com/watch?v=D28s9FjRsBw" target="_blank" rel="noopener">
+        <span class="series-emoji">₿</span>
+        <h3>加密货币新手入门</h3>
+        <p>从注册交易所到买币、出金，一套视频打通新手全流程。</p>
+        <span class="series-link">看合集 →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 工具库 -->
+  <section class="section" id="tools">
+    <p class="section-kicker">STEP · 立即行动</p>
+    <h2>完整工具库</h2>
+    <p class="section-desc">全部为小郑亲测在用的工具。带邀请码的记得先复制再跳转，福利不会丢。</p>
+    <div class="filter-bar" id="filterBar"></div>
+    <div id="toolSections"></div>
+  </section>
+
+  <!-- 教程视频 -->
+  <section class="section" id="videos">
+    <p class="section-kicker">TUTORIALS · 教程视频</p>
+    <h2>跟着视频抄作业</h2>
+    <p class="section-desc">点开即可播放，全部来自 Flybird 小郑 YouTube 频道。</p>
+    <div class="video-grid" id="videoGrid"></div>
+    <p class="more-videos"><a href="https://www.youtube.com/@Benz_ZH/videos" target="_blank" rel="noopener">查看全部 170+ 期视频 →</a></p>
+  </section>
+
+  <!-- 业务合作 -->
+  <section class="section" id="services">
+    <p class="section-kicker">SERVICES · 业务板块</p>
+    <h2>业务合作</h2>
+    <div class="series-grid">
+      <div class="series-card">
+        <span class="series-emoji">🎬</span>
+        <h3>海外自媒体创业陪跑</h3>
+        <p>多年 YouTube 运营经验，从选题、剪辑、运营到过 YPP、收款，全程陪跑赋能。</p>
+      </div>
+      <div class="series-card">
+        <span class="series-emoji">👥</span>
+        <h3>兴趣社群</h3>
+        <p>自媒体、金融投资、创业、私董会等多个社群，同行交流，少走弯路。</p>
+      </div>
+      <div class="series-card">
+        <span class="series-emoji">📈</span>
+        <h3>投资交易</h3>
+        <p>支付宝基金、A股、美股与加密货币，实时分享投资标的与实盘心得。</p>
+      </div>
+      <div class="series-card">
+        <span class="series-emoji">🛠️</span>
+        <h3>账号购买与 IT 支持</h3>
+        <p>AI 大模型订阅、社交与工具账号购买；个人/商业建站与技术答疑。</p>
+      </div>
+    </div>
+    <div class="consult-banner">
+      <div>
+        <h3>一对一付费咨询</h3>
+        <p>自由职业、海外金融投资、创业、自媒体运营、建站——¥499 / 半小时，先聊需求再约时间。</p>
+      </div>
+      <a class="btn-primary" href="#about">联系我</a>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section class="section" id="about">
+    <p class="section-kicker">ABOUT · 关于</p>
+    <h2>关于 Flybird 小郑</h2>
+    <p class="about-text">专注出海金融与科技生活的独立创作者。真实分享全球股票、港美股、加密货币投资实战，跨境支付、海外开户与一人公司（OPC）实操经验，以及 YouTube 自媒体运营与内容变现路径。理念：极简、敏捷、高效、合作共赢。</p>
+    <div class="contact-row">
+      <a class="contact-chip" href="https://www.youtube.com/@Benz_ZH" target="_blank" rel="noopener">▶ YouTube · @Benz_ZH</a>
+      <a class="contact-chip" href="https://t.me/flybird_home" target="_blank" rel="noopener">✈ Telegram 社群</a>
+      <a class="contact-chip" href="https://flybirdzhintro.vercel.app/" target="_blank" rel="noopener">🌐 商务介绍页（旧站）</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Flybird 小郑 · 本站工具链接为博主专属邀请链接，使用不影响你的任何权益，部分工具可享额外福利。</p>
+  <p class="footer-risk">风险提示：投资有风险，本站内容为经验分享，不构成投资建议，请自行判断并遵守所在地法律法规。</p>
+</footer>
+
+<div class="toast" id="toast">已复制</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
