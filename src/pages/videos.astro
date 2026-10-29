@@ -1,0 +1,12 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+const metadata = { title: '视频与内容', description: 'FlyBird 小郑在 YouTube 分享自媒体、创业、投资与科技工具。' };
+const videos = [
+  { title: '从 0 到 1 做海外自媒体', text: '定位、选题与第一条视频的完整思路', id: 'dQw4w9WgXcQ' },
+  { title: '个人商业的长期主义', text: '把流量变成信任，把经验变成产品', id: 'M7lc1UVf-VE' },
+  { title: 'AI 工具与效率工作流', text: '用更少的时间完成更高质量的表达', id: 'ysz5S6PUM-U' },
+];
+---
+<Layout metadata={metadata}><main class="video-page"><section class="video-hero"><p class="eyebrow">/ CONTENT LIBRARY</p><h1>把复杂的事情，<span>讲得简单一点。</span></h1><p>在 YouTube 上分享海外自媒体、个人商业、投资和数字工具。每一条内容都来自真实实践。</p><a class="brand-btn" href="https://www.youtube.com/@Benz_ZH" target="_blank" rel="noreferrer">访问频道 ↗</a></section><section class="video-list">{videos.map(video=><a class="video-item" href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noreferrer"><img src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt={video.title} /><div><p class="section-kicker">WATCH ON YOUTUBE</p><h2>{video.title}</h2><p>{video.text}</p></div><b>↗</b></a>)}</section></main></Layout>
+<style>.video-page{background:#f5f4ef;color:#18191b}.video-hero{background:#18191b;color:#f5f4ef;padding:9rem max(24px,calc((100% - 1180px)/2)) 8rem}.eyebrow,.section-kicker{font-size:11px;letter-spacing:.2em;font-weight:700;color:#b8d95a}.video-hero h1{font-size:clamp(3.3rem,7vw,6rem);line-height:1;letter-spacing:-.07em;max-width:850px;margin:2rem 0}.video-hero h1 span{color:#b8d95a}.video-hero>p:not(.eyebrow){color:#a8adaa;font-size:1.1rem;line-height:1.8;max-width:560px;margin-bottom:2rem}.brand-btn{display:inline-block;background:#b8d95a;color:#18191b;padding:15px 24px;font-weight:700}.video-list{max-width:1180px;margin:auto;padding:6rem 24px}.video-item{display:grid;grid-template-columns:330px 1fr 30px;gap:2.5rem;align-items:center;padding:2rem 0;border-bottom:1px solid #d2d3cb}.video-item img{width:100%;aspect-ratio:16/9;object-fit:cover}.video-item h2{font-size:2rem;letter-spacing:-.04em;margin:.8rem 0}.video-item p:not(.section-kicker){color:#69706c;line-height:1.6}.video-item>b{font-size:1.5rem;color:#8eaf32}@media(max-width:700px){.video-hero{padding:6rem 24px}.video-list{padding:4rem 24px}.video-item{grid-template-columns:1fr;gap:1rem}.video-item>b{display:none}}
+</style>
